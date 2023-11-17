@@ -2,7 +2,7 @@ name: First workflow
 on:
     push:
         branches:
-            - master
+            - main
 jobs:
     job1:
         name: First job 
