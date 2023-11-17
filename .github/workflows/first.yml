@@ -10,7 +10,6 @@ jobs:
         steps:
             - name: First step
               run: echo "Hello owner ${{github.repository_owner}}"
-
     job2:
         name: Second job
         runs-on: ubuntu-latest
