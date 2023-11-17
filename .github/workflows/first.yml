@@ -6,7 +6,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: First step
-              run: echo "Hello ${{GITHUB_REPOSITORY_OWNER}}"
+              run: echo "Hello ${{github.repository_owner}}"
             - name: Second step
               run: env | sort
 
