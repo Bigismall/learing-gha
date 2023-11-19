@@ -17,7 +17,7 @@ jobs:
             uses: actions/checkout@v4.1.1
 
           - name: Draw
-            run: sips -j ./smile/smile.js -o ${{env.SMILE_FILE}}
+            run: sips -j ./smile/smile.js -o ./smile/${{env.SMILE_FILE}}
 
           - name: Upload
             uses: actions/upload-artifact@v2
