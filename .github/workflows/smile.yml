@@ -20,10 +20,11 @@ jobs:
             run: sips -j ./smile/smile.js -o ./smile/${{env.SMILE_FILE}}
 
           - name: Upload
-            uses: actions/upload-artifact@v2
+            uses: actions/upload-artifact@v3
             with:
                 name: ${{env.SMILE_FILE}}
                 path: ./smile/${{env.SMILE_FILE}}
+                retention-days: 3
 
 
         
