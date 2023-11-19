@@ -2,7 +2,7 @@ name: First workflow
 on:
     push:
         branches:
-            - main
+            - hemp
 jobs:
     job1:
         name: First job 
