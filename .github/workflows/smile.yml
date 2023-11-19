@@ -7,7 +7,7 @@ on:
       name:
         description: 'Show smile to:'
         required: true
-        default: '${{github.repository_owner}}'
+        default: ''
         type: string
 jobs:
     draw:
