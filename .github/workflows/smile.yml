@@ -1,0 +1,29 @@
+name: Draw a smile
+env:
+    SMILE_FILE: smile.png
+on: 
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Show smile to:'
+        required: true
+        default: '${{github.repository_owner}}'
+        type: string
+jobs:
+    draw:
+        runs-on: macos-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v4.1.1
+
+          - name: Draw
+            run: sips -j ./smile/smile.js -o ${{env.SMILE_FILE}}
+
+          - name: Upload
+            uses: actions/upload-artifact@v2
+            with:
+                name: ${{env.SMILE_FILE}}
+                path: ./smile/${{env.SMILE_FILE}}
+
+
+        
