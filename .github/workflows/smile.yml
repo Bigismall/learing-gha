@@ -1,4 +1,5 @@
 name: Draw a smile
+run-name: ${{ github.actor }} is drawing Smile with SIPS
 env:
     SMILE_FILE: smile.png
 on: 
