@@ -13,15 +13,13 @@ runs:
   using: "composite"
   steps:
     - run: echo Hello ${{ inputs.who-to-greet }}.
-      name: Hello
       shell: bash
     - id: random-number-generator
       run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
-      name: Random
+      shell: bash
+    - run: echo "Empty step" >> $GITHUB_OUTPUT
       shell: bash
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      name: Set path
       shell: bash
     - run: goodbye.sh
-      name: Run shell script
       shell: bash
