@@ -29,7 +29,7 @@ runs:
   using: "composite"
   steps:
     - id: multiplication
-      run: echo "sum=$(echo $((${{ inputs.number-1 }} * ${{ inputs.number-2 }}))" >> $GITHUB_OUTPUT
+      run: echo "sum=$(echo $((${{ inputs.number-1 }} * ${{ inputs.number-2 }})))" >> $GITHUB_OUTPUT
       shell: bash
     # - id: sum
     #   run: echo "::set-output name=result::$((${{ inputs.number-1 }} + ${{ inputs.number-2 }}))"
