@@ -28,4 +28,4 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        operation: ['sum', 'subtraction', 'multiplication', 'division']
+        operation: ['output-sum', 'output-subtraction', 'output-multiplication', 'output-division']
