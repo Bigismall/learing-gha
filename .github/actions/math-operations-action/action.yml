@@ -14,23 +14,30 @@ inputs:
 outputs:
   output-sum:
     description: Sum of the two numbers
-    value: ${{ steps.sum.outputs.result }}
-  output-multiplication:
-    description: Multiplication of the two numbers
-    value: ${{ steps.multiplication.outputs.result }}
-  output-subtraction:
-    description: Subtraction of the two numbers
-    value: ${{ steps.subtraction.outputs.result }}
-  output-division:
-    description: Division of the two numbers
-    value: ${{ steps.division.outputs.result }}
+    value: ${{ steps.sum.outputs.sum }}
+  output-debug:
+    description: Debug of the two numbers
+    value: ${{ steps.debug.outputs.debug }}
+  # output-multiplication:
+  #   description: Multiplication of the two numbers
+  #   value: ${{ steps.multiplication.outputs.result }}
+  # output-subtraction:
+  #   description: Subtraction of the two numbers
+  #   value: ${{ steps.subtraction.outputs.result }}
+  # output-division:
+  #   description: Division of the two numbers
+  #   value: ${{ steps.division.outputs.result }}
 
 runs:
   using: "composite"
   steps:
     - id: sum
-      run: echo "sum=$((echo $((${{ inputs.number-1 }} + ${{ inputs.number-2 }}))))" >> $GITHUB_OUTPUT
+      run: echo "sum=$(echo $((${{ inputs.number-1 }} + ${{ inputs.number-2 }})))" >> $GITHUB_OUTPUT
       shell: bash
+    - id: debug
+      run: echo "debug=$(echo 123)" >> $GITHUB_OUTPUT
+      shell: bash
+
     # - id: multiplication
     #   run: echo "multiplication=$(echo $((${{ inputs.number-1 }} * ${{ inputs.number-2 }})))" >> $GITHUB_OUTPUT
     #   shell: bash
