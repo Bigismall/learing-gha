@@ -1,0 +1,31 @@
+name: Composite Action Math Matrix
+on: 
+    workflow_dispatch:
+        inputs:
+            number-1:
+                description: First number
+                required: true
+                default: "0"
+            number-2:
+                description: Second number
+                required: true
+                default: "0"
+
+jobs:
+  math-operations:
+    runs-on: ubuntu-latest
+    name: Math operations
+    steps:
+    - uses: actions/checkout@v4
+    - id: call-math-operations-action
+      uses: ./.github/actions/math-operations-action
+      with:
+        number-1: ${{ inputs.number-1 }}
+        number-2: ${{ inputs.number-2 }}
+    - name: Print result
+      run: echo "(${{ matrix.operation }}) ${{ steps.call-math-operations-action.outputs[matrix.operation] }}"
+      shell: bash
+    strategy:
+      fail-fast: true
+      matrix:
+        operation: ['sum', 'subtraction', 'multiplication', 'division']

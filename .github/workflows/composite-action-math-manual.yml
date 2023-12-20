@@ -34,22 +34,4 @@ jobs:
             echo "### All the calculations are done! :rocket:" >> $GITHUB_STEP_SUMMARY
             echo "${{ toJson(inputs) }}" >> $GITHUB_STEP_SUMMARY
             echo "${{ toJson(steps.call-math-operations-action.outputs) }}" >> $GITHUB_STEP_SUMMARY
-        shell: bash                    
-
-    
-        
-                
-
-#         steps:
-#   - uses: actions/checkout@v4
-#   - id: call-math-operations-action
-#     uses: ./.github/actions/math-operations-action
-#     with:
-#       number-1: ${{ inputs.number-1 }}
-#       number-2: ${{ inputs.number-2 }}
-#   - name: Display results
-#     run: echo "(${{ matrix.operation }}) ${{ steps.call-math-operations-action.outputs[matrix.operation] }}"
-#     shell: bash
-#     strategy:
-#       matrix:
-#         operation: ['sum', 'subtraction', 'multiplication', 'division']
+        shell: bash
