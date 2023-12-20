@@ -32,7 +32,7 @@ jobs:
 
   print-summary:        
     runs-on: ubuntu-latest
-    name: Math operations  
+    name: Print math operations output  
     needs: math-operations
     steps:
       - uses: actions/checkout@v4
