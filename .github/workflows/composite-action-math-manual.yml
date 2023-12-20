@@ -1,0 +1,32 @@
+name: Composite Action Math
+on: 
+    workflow_dispatch:
+        inputs:
+            number-1:
+                description: First number
+                required: true
+                default: "0"
+            number-2:
+                description: Second number
+                required: true
+                default: "0"
+
+jobs:
+  math-operations:
+    runs-on: ubuntu-latest
+    name: A job to say hello and generate a random number
+    steps:
+      - uses: actions/checkout@v4
+      - id: call-math-operations-action
+        uses: ./.github/actions/math-operations-action
+        with:
+          number-1: ${{ inputs.number-1 }}
+          number-2: ${{ inputs.number-2 }}
+      - run: echo (+) ${{ steps.call-math-operations-action.outputs.sum }}
+        shell: bash 
+      - run: echo (-) ${{ steps.call-math-operations-action.outputs.subtraction }}
+        shell: bash 
+      - run: echo (*) ${{ steps.call-math-operations-action.outputs.multiplication }}
+        shell: bash 
+      - run: echo (/) ${{ steps.call-math-operations-action.outputs.division }}
+        shell: bash        
