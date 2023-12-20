@@ -30,8 +30,9 @@ jobs:
         shell: bash 
       - run: echo "(/) ${{ steps.call-math-operations-action.outputs.output-division }}"
         shell: bash        
-      - run: echo "All outputs ${{ steps.call-math-operations-action.outputs }}"
-        shell: bash        
+      - run: echo "All outputs ${{ toJson(steps.call-math-operations-action.outputs) }}"
+        shell: bash
+                
 
 # ${{ steps.call-hello-user-action.outputs.random-number }}
 #         steps:
