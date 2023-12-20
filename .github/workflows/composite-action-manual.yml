@@ -1,10 +1,9 @@
 name: Composite Action test
-
 on: 
     workflow_dispatch:
      inputs:
-      name:
-        description: 'Say HI to:'
+      input-name:
+        description: 'Say Hello to:'
         required: true
         default: ''
         type: string
@@ -12,12 +11,12 @@ on:
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to say hello and generate a random number
     steps:
       - uses: actions/checkout@v4
-      - id: foo
+      - id: call-hello-user-action
         uses: ./.github/actions/hello-user-action
         with:
-          who-to-greet: ${{ inputs.name }}
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+          who-to-greet: ${{ inputs.input-name }}
+      - run: echo random-number ${{ steps.call-hello-user-action.outputs.random-number }}
         shell: bash        
