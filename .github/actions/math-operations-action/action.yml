@@ -29,14 +29,15 @@ runs:
   using: "composite"
   steps:
     - id: multiplication
-      run: echo "::set-output name=result::$((${{ inputs.number-1 }} * ${{ inputs.number-2 }}))"
+      run: echo "sum=$(echo (${{ inputs.number-1 }} * ${{ inputs.number-2 }}))" >> $GITHUB_OUTPUT
       shell: bash
-    - id: sum
-      run: echo "::set-output name=result::$((${{ inputs.number-1 }} + ${{ inputs.number-2 }}))"
-      shell: bash
-    - id: subtraction
-      run: echo "::set-output name=result::$((${{ inputs.number-1 }} - ${{ inputs.number-2 }}))"
-      shell: bash
-    - id: division
-      run: echo "::set-output name=result::$((${{ inputs.number-1 }} / ${{ inputs.number-2 }}))"
-      shell: bash
+    # - id: sum
+    #   run: echo "::set-output name=result::$((${{ inputs.number-1 }} + ${{ inputs.number-2 }}))"
+    #   shell: bash
+    # - id: subtraction
+    #   run: echo "::set-output name=result::$((${{ inputs.number-1 }} - ${{ inputs.number-2 }}))"
+    #   shell: bash
+    # - id: division
+    #   run: echo "::set-output name=result::$((${{ inputs.number-1 }} / ${{ inputs.number-2 }}))"
+    #   shell: bash
+#  run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
