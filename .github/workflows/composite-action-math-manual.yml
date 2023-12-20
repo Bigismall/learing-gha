@@ -30,7 +30,11 @@ jobs:
         shell: bash 
       - run: echo "(/) ${{ steps.call-math-operations-action.outputs.output-division }}"
         shell: bash        
-      - run: echo "### All the calculations are done! ${{ toJson(steps.call-math-operations-action.outputs) }}" >> $GITHUB_STEP_SUMMARY
+      - run: | 
+            echo "### All the calculations are done! :rocket:" >> $GITHUB_STEP_SUMMARY
+            echo "${{ toJson(inputs) }}" >> $GITHUB_STEP_SUMMARY
+            echo "${{ toJson(steps.call-math-operations-action.outputs) }}" >> $GITHUB_STEP_SUMMARY
+        shell: bash                    
 
     
         
