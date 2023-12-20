@@ -22,14 +22,14 @@ jobs:
         with:
           number-1: ${{ inputs.number-1 }}
           number-2: ${{ inputs.number-2 }}
-    #   - run: echo "(+) ${{ steps.call-math-operations-action.outputs.output-sum }}"
-    #     shell: bash 
-    #   - run: echo "(-) ${{ steps.call-math-operations-action.outputs.output-subtraction }}"
-    #     shell: bash 
-    #   - run: echo "(*) ${{ steps.call-math-operations-action.outputs.output-multiplication }}"
-    #     shell: bash 
-    #   - run: echo "(/) ${{ steps.call-math-operations-action.outputs.output-division }}"
-    #     shell: bash        
+      - run: echo "(+) ${{ steps.call-math-operations-action.outputs.output-sum }}"
+        shell: bash 
+      - run: echo "(-) ${{ steps.call-math-operations-action.outputs.output-subtraction }}"
+        shell: bash 
+      - run: echo "(*) ${{ steps.call-math-operations-action.outputs.output-multiplication }}"
+        shell: bash 
+      - run: echo "(/) ${{ steps.call-math-operations-action.outputs.output-division }}"
+        shell: bash        
       - run: echo "All outputs ${{ toJson(steps.call-math-operations-action.outputs) }}"
         shell: bash
                 
