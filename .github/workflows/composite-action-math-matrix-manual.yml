@@ -23,7 +23,7 @@ jobs:
         number-1: ${{ inputs.number-1 }}
         number-2: ${{ inputs.number-2 }}
     - name: Print result
-      run: echo "(${{ matrix.operation }}) ${{ steps.call-math-operations-action.outputs[matrix.operation] }}"
+      run: echo "::notice title=${{ matrix.operation }} ::${{ steps.call-math-operations-action.outputs[matrix.operation] }}"
       shell: bash
     strategy:
       fail-fast: true
