@@ -14,7 +14,7 @@ on:
 jobs:
   math-operations:
     runs-on: ubuntu-latest
-    name: A job to do some math operations
+    name: Math operations
     steps:
       - uses: actions/checkout@v4
       - id: call-math-operations-action
@@ -24,12 +24,12 @@ jobs:
           number-2: ${{ inputs.number-2 }}
       - run: echo "(+) ${{ steps.call-math-operations-action.outputs.sum }}"
         shell: bash 
-    #   - run: echo "(-) ${{ steps.call-math-operations-action.outputs.subtraction }}"
-    #     shell: bash 
-    #   - run: echo "(*) ${{ steps.call-math-operations-action.outputs.multiplication }}"
-    #     shell: bash 
-    #   - run: echo "(/) ${{ steps.call-math-operations-action.outputs.division }}""
-    #     shell: bash        
+      - run: echo "(-) ${{ steps.call-math-operations-action.outputs.subtraction }}"
+        shell: bash 
+      - run: echo "(*) ${{ steps.call-math-operations-action.outputs.multiplication }}"
+        shell: bash 
+      - run: echo "(/) ${{ steps.call-math-operations-action.outputs.division }}"
+        shell: bash        
 
 # ${{ steps.call-hello-user-action.outputs.random-number }}
 #         steps:

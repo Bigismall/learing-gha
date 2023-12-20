@@ -31,13 +31,12 @@ runs:
     - id: sum
       run: echo "sum=$(echo $((${{ inputs.number-1 }} + ${{ inputs.number-2 }})))" >> $GITHUB_OUTPUT
       shell: bash
-    # - id: sum
-    #   run: echo "::set-output name=result::$((${{ inputs.number-1 }} + ${{ inputs.number-2 }}))"
-    #   shell: bash
-    # - id: subtraction
-    #   run: echo "::set-output name=result::$((${{ inputs.number-1 }} - ${{ inputs.number-2 }}))"
-    #   shell: bash
-    # - id: division
-    #   run: echo "::set-output name=result::$((${{ inputs.number-1 }} / ${{ inputs.number-2 }}))"
-    #   shell: bash
-#  run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
+    - id: multiplication
+      run: echo "multiplication=$(echo $((${{ inputs.number-1 }} * ${{ inputs.number-2 }})))" >> $GITHUB_OUTPUT
+      shell: bash
+    - id: subtraction
+      run: echo "subtraction=$(echo $((${{ inputs.number-1 }} - ${{ inputs.number-2 }})))" >> $GITHUB_OUTPUT
+      shell: bash
+    - id: division
+      run: echo "division=$(echo $((${{ inputs.number-1 }} / ${{ inputs.number-2 }})))" >> $GITHUB_OUTPUT
+      shell: bash
