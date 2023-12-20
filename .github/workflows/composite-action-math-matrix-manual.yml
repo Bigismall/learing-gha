@@ -29,3 +29,21 @@ jobs:
       fail-fast: true
       matrix:
         operation: ['output-sum', 'output-subtraction', 'output-multiplication', 'output-division']
+
+  print-summary:        
+    runs-on: ubuntu-latest
+    name: Math operations  
+    needs: math-operations
+    steps:
+      - uses: actions/checkout@v4
+      - id: call-math-operations-action
+        uses: ./.github/actions/math-operations-action
+        with:
+          number-1: ${{ inputs.number-1 }}
+          number-2: ${{ inputs.number-2 }}      
+      - name: Print summary
+        run: | 
+          echo "### All the calculations are done! :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "${{ toJson(inputs) }}" >> $GITHUB_STEP_SUMMARY
+          echo "${{ toJson(steps.call-math-operations-action.outputs) }}" >> $GITHUB_STEP_SUMMARY
+        shell: bash    
