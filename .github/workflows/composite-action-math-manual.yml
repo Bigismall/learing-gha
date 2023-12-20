@@ -14,7 +14,7 @@ on:
 jobs:
   math-operations:
     runs-on: ubuntu-latest
-    name: A job to say hello and generate a random number
+    name: A job to do some math operations
     steps:
       - uses: actions/checkout@v4
       - id: call-math-operations-action
@@ -31,7 +31,7 @@ jobs:
     #   - run: echo "(/) ${{ steps.call-math-operations-action.outputs.division }}""
     #     shell: bash        
 
-
+# ${{ steps.call-hello-user-action.outputs.random-number }}
 #         steps:
 #   - uses: actions/checkout@v4
 #   - id: call-math-operations-action
