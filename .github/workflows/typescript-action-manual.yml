@@ -1,0 +1,11 @@
+name: TypeScript action test
+on:
+    workflow_dispatch
+jobs:
+    test-ts-action:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run first TypeScript action
+              uses: Bigismall/typescript-github-action@v1.0.0.0-alpha
+            - name: Just check the output
+              run: echo "You should see this message, and the time message from the first action"
