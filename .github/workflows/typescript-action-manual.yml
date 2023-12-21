@@ -11,6 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Run first TypeScript action
+              id: test-action
               uses: Bigismall/typescript-github-action@v1.0.0.0-alpha
               with:
                   seconds: ${{ github.event.inputs.seconds }}
