@@ -17,4 +17,4 @@ jobs:
                   seconds: ${{ github.event.inputs.seconds }}
             - name: Print Output
               id: output
-              run: echo "The time is now ${{steps.test-action.outputs.time}}, so You had to wait ${{ inputs.seconds.time }} seconds"
+              run: echo "The time is now ${{steps.test-action.outputs.time}}, so You had to wait ${{ inputs.seconds }} seconds"
