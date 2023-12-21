@@ -1,4 +1,4 @@
-name: Composite Javascript Action test
+name: Javascript Action test
 on:
     workflow_dispatch:
         inputs:
