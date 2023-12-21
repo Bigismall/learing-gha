@@ -1,6 +1,4 @@
 # Learing GitHub actions 
-
-
 - [x] Custom Action ![](https://github.com/Bigismall/learing-gha/actions/workflows/smile.yml/badge.svg)
 - [x] Composite Action ![](https://github.com/Bigismall/learing-gha/actions/workflows/composite-action-math-matrix-manual.yml/badge.svg)
 - [x] JS custom action ![](https://github.com/Bigismall/learing-gha/actions/workflows/composite-javascript-action-manual.yml/badge.svg)
