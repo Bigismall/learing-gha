@@ -3,7 +3,7 @@
 - [x] Composite Action ![](https://github.com/Bigismall/learing-gha/actions/workflows/composite-action-math-matrix-manual.yml/badge.svg)
 - [x] JS custom action ![](https://github.com/Bigismall/learing-gha/actions/workflows/composite-javascript-action-manual.yml/badge.svg)
 - [x] TS custom action with source code build ![](https://github.com/Bigismall/learing-gha/actions/workflows/typescript-action-manual.yml/badge.svg)
-- [ ] Docker image with custom action
+- [x] Docker image with custom action ![](https://github.com/Bigismall/learing-gha/actions/workflows/docker-action-manual.yml/badge.svg)
 
 ## Links:
 * My docs: https://github.com/Bigismall/github-actions/blob/main/docs/notes.md
